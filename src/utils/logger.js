@@ -1,7 +1,6 @@
+const { program } = require('commander');
 const chalk = require('chalk');
 const ora = require('ora');
-
-const { program } = require('../config');
 
 // eslint-disable-next-line
 const log = console.log;
