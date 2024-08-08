@@ -1,0 +1,19 @@
+{
+  "current": "IBM",
+  "options": [
+    {
+      "name": "IBM",
+      "baseURL": "https://us-south.ml.cloud.ibm.com/",
+      "apiKey": "",
+      "modelId": "meta-llama/llama-3-70b-instruct",
+      "projectId": "",
+      "modelParameters": {
+        "decoding_method": "greedy",
+        "max_new_tokens": 200,
+        "min_new_tokens": 0,
+        "stop_sequences": [],
+        "repetition_penalty": 1
+      }
+    }
+  ]
+}
