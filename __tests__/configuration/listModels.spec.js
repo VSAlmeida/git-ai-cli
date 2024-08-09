@@ -42,7 +42,7 @@ describe(`The "${testingCommand}" command should`, () => {
     it('The user dont have any LLM Provider configured', () => {
       const result = shell.exec(testingCommand, { silent: true });
 
-      expect(result.stderr).toEqual(
+      expect(result).toEqual(
         expect.stringContaining('You dont have any LLM Provider configured')
       );
     });
