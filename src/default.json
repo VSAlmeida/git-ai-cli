@@ -1,11 +1,12 @@
 {
-  "current": "IBM",
+  "current": "",
   "options": [
     {
-      "name": "IBM",
+      "name": "IBM Watsonx AI",
       "baseURL": "https://us-south.ml.cloud.ibm.com/",
+      "apiVersion": "2024-05-01",
       "apiKey": "",
-      "modelId": "meta-llama/llama-3-70b-instruct",
+      "modelId": "",
       "projectId": "",
       "modelParameters": {
         "decoding_method": "greedy",
