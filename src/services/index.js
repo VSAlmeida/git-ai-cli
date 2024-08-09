@@ -1,3 +1,3 @@
-const invokeLLM = require('./invokeLLM');
+const watsonxAI = require('./watsonxAI');
 
-module.exports = { invokeLLM };
+module.exports = { watsonxAI };
