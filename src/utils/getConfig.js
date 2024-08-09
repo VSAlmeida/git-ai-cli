@@ -11,10 +11,10 @@ const configPath = {
 
 // eslint-disable-next-line consistent-return
 const getConfig = (configType) => {
-  logger.debug('Fetching configuration file...');
+  logger.debug(`Reading ${configType} configuration file...`);
 
   if (configType === 'current' && !fs.existsSync(configPath.current)) {
-    logger.debug('Configuration file not found, creating a new one...');
+    logger.debug('Configuration file not found, copying from default...');
 
     try {
       fs.copyFileSync(configPath.default, configPath.current);
@@ -28,7 +28,11 @@ const getConfig = (configType) => {
   }
 
   try {
-    return JSON.parse(fs.readFileSync(configPath[configType], 'utf-8'));
+    const config = JSON.parse(fs.readFileSync(configPath[configType], 'utf-8'));
+
+    logger.debug('Configuration file readed successfully');
+
+    return config;
   } catch (err) {
     logger.error('Failed to read configuration file');
     logger.error(err);

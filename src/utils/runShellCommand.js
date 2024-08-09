@@ -3,12 +3,12 @@ const shell = require('shelljs');
 const logger = require('./logger');
 
 const runShellCommand = (command) => {
-  logger.debug(`Running the command "${command}"`);
+  logger.debug(`Executing the command "${command}"`);
 
   const result = shell.exec(command, { silent: true });
 
   if (result.code !== 0) {
-    logger.error(`Error: The command "${command}" failed`);
+    logger.error(`Error to execute the command "${command}" failed`);
     shell.exit(1);
   }
 
