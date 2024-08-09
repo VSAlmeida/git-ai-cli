@@ -3,6 +3,7 @@ const getConfig = require('./getConfig');
 const saveConfig = require('./saveConfig');
 const runShellCommand = require('./runShellCommand');
 const isCommandAvailable = require('./isCommandAvailable');
+const checkLlmConfiguration = require('./checkLlmConfiguration');
 
 module.exports = {
   logger,
@@ -10,4 +11,5 @@ module.exports = {
   saveConfig,
   runShellCommand,
   isCommandAvailable,
+  checkLlmConfiguration,
 };
