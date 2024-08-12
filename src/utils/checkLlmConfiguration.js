@@ -8,7 +8,7 @@ const checkLlmConfiguration = (config, requiredFields) => {
   requiredFields.forEach((field) => {
     if (!config[field]) {
       logger.error(`You dont have ${config.name} ${field} configured`);
-      logger.warning('Please run "git ai --config" to configure');
+      logger.warning('Please run "git ai config" to configure');
       shelljs.exit(1);
     }
   });

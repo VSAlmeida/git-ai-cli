@@ -7,7 +7,7 @@ const listModels = async () => {
 
   if (!config.current) {
     logger.error('You dont have any LLM Provider configured');
-    logger.warning('Please run "git ai --config" to configure');
+    logger.warning('Please run "git ai config" to configure');
 
     return;
   }
