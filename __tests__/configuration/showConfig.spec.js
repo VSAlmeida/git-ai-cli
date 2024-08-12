@@ -34,8 +34,6 @@ describe(`The "${testingCommand}" command should`, () => {
 
     const result = shell.exec(testingCommand, { silent: true });
 
-    expect(result).toEqual(
-      expect.stringContaining('Your current configurations:')
-    );
+    expect(result).toEqual(expect.stringContaining('IBM Watsonx AI'));
   });
 });

@@ -10,7 +10,7 @@ const configPath = {
 
 const defaultConfig = JSON.parse(fs.readFileSync(configPath.default, 'utf8'));
 
-const currentConfig = JSON.parse(fs.readFileSync(configPath.current, 'utf8'));
+const originalConfig = JSON.parse(fs.readFileSync(configPath.current, 'utf8'));
 
 const editLlmConfig = (llm, config) => {
   const configEditted = {
@@ -25,10 +25,16 @@ const editLlmConfig = (llm, config) => {
   };
 
   fs.writeFileSync(configPath.current, JSON.stringify(configEditted));
+
+  return configEditted;
 };
 
 const resetConfigFile = () => {
   fs.writeFileSync(configPath.current, JSON.stringify(defaultConfig));
+};
+
+const getCurrentConfig = () => {
+  return JSON.parse(fs.readFileSync(configPath.current, 'utf8'));
 };
 
 beforeEach(() => {
@@ -36,7 +42,9 @@ beforeEach(() => {
 });
 
 afterAll(() => {
-  fs.writeFileSync(configPath.current, JSON.stringify(currentConfig, null, 2));
+  fs.writeFileSync(configPath.current, JSON.stringify(originalConfig, null, 2));
 });
 
 global.editLlmConfig = editLlmConfig;
+global.getCurrentConfig = getCurrentConfig;
+global.defaultConfig = defaultConfig;
