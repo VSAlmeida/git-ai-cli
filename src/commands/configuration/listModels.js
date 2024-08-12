@@ -17,10 +17,10 @@ const listModels = async () => {
   const llmConfig = config.options.find((opt) => opt.name === config.current);
 
   const llmProviders = {
-    IBM: watsonxAI.getModels(llmConfig),
+    'IBM Watsonx AI': watsonxAI,
   };
 
-  await llmProviders[config.current];
+  await llmProviders[config.current].getModels(llmConfig);
 };
 
 module.exports = listModels;
