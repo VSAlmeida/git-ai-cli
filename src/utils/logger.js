@@ -23,6 +23,10 @@ const clearAndRenderSpinner = (msg) => {
   currentSpinner.render();
 };
 
+const updateSpinner = (msg) => {
+  currentSpinner.start(chalk.whiteBright(msg));
+};
+
 const success = (msg) => {
   const successTemplate = chalk.green(msg);
 
@@ -91,4 +95,12 @@ const debug = (msg) => {
   log(debugTemplate);
 };
 
-module.exports = { info, success, warning, error, debug, spinner };
+module.exports = {
+  info,
+  success,
+  warning,
+  error,
+  debug,
+  spinner,
+  updateSpinner,
+};
