@@ -10,9 +10,10 @@
     "lint": "eslint .",
     "test": "jest"
   },
-  "private": true,
+  "private": false,
   "license": "Apache-2.0",
   "author": "VSAlmeida <vsalmeida@ibm.com>",
+  "repository": "https://github.com/VSAlmeida/git-ai-cli",
   "dependencies": {
     "@inquirer/prompts": "^5.3.7",
     "@langchain/community": "^0.2.25",

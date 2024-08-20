@@ -1,0 +1,5 @@
+.*
+__tests__
+jest.config.js
+jest.setup.js
+CODE_OF_CONDUCT.md
