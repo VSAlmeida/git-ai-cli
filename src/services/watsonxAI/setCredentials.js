@@ -1,16 +1,28 @@
 const shell = require('shelljs');
 const { input, select } = require('@inquirer/prompts');
 
-const { saveConfig } = require('../../utils');
+const { saveConfig, logger } = require('../../utils');
 
 const setCredentials = async (config) => {
   let modelId = await select({
     message: 'Select the model id you want to use:',
     choices: [
-      { name: 'Llama 3.1 405b instruct', value: 'llama-3-405b-instruct' },
-      { name: 'Llama 3 70b instruct', value: 'llama-3-70b-instruct' },
-      { name: 'Mixtral 8x7b instruct', value: 'mixtral-8x7b-instruct-v01' },
-      { name: 'Mistral Large', value: 'mistral-large' },
+      {
+        name: 'Llama 3.1 405B Instruct',
+        value: 'meta-llama/llama-3-405b-instruct',
+      },
+      {
+        name: 'Llama 3 70B Instruct',
+        value: 'meta-llama/llama-3-70b-instruct',
+      },
+      {
+        name: 'Mixtral 8x7B Instruct',
+        value: 'mistralai/mixtral-8x7b-instruct-v01',
+      },
+      {
+        name: 'Granite 34B Instruct',
+        value: 'ibm/granite-34b-code-instruct',
+      },
       {
         name: 'Other',
         value: 'other',
@@ -54,6 +66,8 @@ const setCredentials = async (config) => {
       return opt;
     }),
   });
+
+  logger.success('Your configuration has been saved successfully');
 };
 
 module.exports = setCredentials;
