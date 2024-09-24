@@ -54,7 +54,7 @@ Output:
     })
     .catch((err) => {
       logger.error('Failed to generate commit message');
-      logger.error(err?.response?.data?.errors[0]?.message || err.toString());
+      logger.error(err.toString());
 
       shelljs.exit(1);
     });
