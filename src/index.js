@@ -10,7 +10,7 @@ program
   .version(`v${version}`, '-v, --version', 'Output the current version.')
   .helpOption('-h, --help', 'Display help for command.')
   .option(
-    '-d, --debug',
+    '--debug',
     'Enable debug mode to log detailed information during execution.'
   );
 
@@ -27,7 +27,7 @@ program
   )
   .option('--dry-run', 'Show the generated commit message without committing.')
   .option(
-    '-d, --debug',
+    '--debug',
     'Enable debug mode to log detailed information during execution.'
   )
   .action((options) => {
@@ -43,7 +43,7 @@ program
   .option('--show-config', 'Show the current configuration.')
   .option('--reset', 'Reset configuration to default values.')
   .option(
-    '-d, --debug',
+    '--debug',
     'Enable debug mode to log detailed information during execution.'
   )
   .action((options) => {
