@@ -1,7 +1,7 @@
 {
   "name": "git-ai-cli",
   "description": "Automate commit message generation with AI-driven suggestions.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "src/index.js",
   "bin": {
     "git-ai": "src/index.js"
